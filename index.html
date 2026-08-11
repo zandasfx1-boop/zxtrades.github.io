@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zandasx Trades | Forex & Deriv Profits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0F172A',
+                        card: '#1E293B',
+                        profit: '#10B981',
+                        accent: '#3B82F6',
+                        tg: '#25A3E0'
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(rgba(15,23,42,0.94), rgba(15,23,42,0.94)), url('https://i.imgur.com/RpYqJfL.jpeg') center/cover no-repeat fixed;
+            color:#f8fafc;
+            font-family:'Inter',sans-serif;
+        }
+        .smooth { transition: all 0.3s ease; }
+        .card-smooth { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-smooth:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(16, 185, 129, 0.2); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity:0; }
+        @keyframes fadeIn { to { opacity:1; } }
+        .page { display:none; }
+        .page.active { display:block; }
+        .btn-glow { transition: box-shadow 0.3s ease; }
+        .btn-glow:hover { box-shadow: 0 0 18px rgba(59,130,246,0.5); }
+        
+        /* ANIMATED CODED ZT SHIELD LOGO */
+        .logo-container { display:flex; align-items:center; gap:2px; }
+        .zt-shield { width:40px; height:44px; position:relative; animation: logoPulse 3s ease-in-out infinite; }
+        @keyframes logoPulse {
+            0% { transform:scale(1); filter: drop-shadow(0 0 0 rgba(59,130,246,0)); }
+            50% { transform:scale(1.08); filter: drop-shadow(0 0 15px rgba(59,130,246,0.4)); }
+            100% { transform:scale(1); filter: drop-shadow(0 0 0 rgba(59,130,246,0)); }
+        }
+        .logo-text { font-size:22px; font-weight:900; letter-spacing:0.5px; }
+        .bot-card { background: rgba(37, 163, 224, 0.08); border: 1px solid rgba(37, 163, 224, 0.25); }
+    </style>
+</head>
+<body class="smooth">
+
+<!-- NAVIGATION: ANIMATED CODED ZT SHIELD LOGO (NO PNG!) -->
+<nav class="sticky top-0 z-50 bg-card/80 backdrop-blur-md shadow-md px-5 py-3 fade-in">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="#" onclick="showPage('home')" class="logo-container">
+            <!-- ZT SHIELD LOGO MADE 100% WITH CODE -->
+            <div class="zt-shield">
+                <svg viewBox="0 0 40 44" width="100%" height="100%">
+                    <!-- Shield Background -->
+                    <path d="M20 2L2 12v14c0 8 8 15 18 17 10-2 18-9 18-17V12L20 2z" fill="#0F172A" stroke="#3B82F6" stroke-width="2"/>
+                    <!-- "Z" Letter (Blue) -->
+                    <path d="M8 20h12l-12 10h12" fill="none" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- "T" Letter (Green) -->
+                    <path d="M24 20v10M21 20h6" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <!-- Logo Text -->
+            <span class="logo-text text-accent">Zx<span class="text-profit">Trades</span></span>
+        </a>
+
+        <div class="gap-6 hidden md:flex items-center">
+            <a href="#" onclick="showPage('home')" class="hover:text-accent smooth">Home</a>
+            <a href="#" onclick="showPage('chart')" class="hover:text-accent smooth">📈 Live Chart</a>
+            <button onclick="showLogin()" class="text-red-400 hover:text-red-300 smooth">🔐 Owner</button>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ============== HOME PAGE ============== -->
+<div id="page-home" class="page active container mx-auto px-4 py-16 fade-in">
+    <section class="text-center mb-20">
+        <h1 class="text-[clamp(2rem,6vw,4rem)] font-bold mb-5">Trade Forex & Deriv Like A Pro 💸</h1>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">Daily Accurate Signals • FVG & Price Action • Prop Firm Help • Earn Consistent Income</p>
+        <a href="#" onclick="showPage('chart')" class="bg-accent hover:bg-accent/90 px-8 py-3 rounded-lg font-semibold btn-glow smooth">View Full Market Chart</a>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="mb-20">
+        <h2 class="text-3xl font-bold text-center mb-12">💰 Ways To Earn</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="bg-card/80 p-7 rounded-xl card-smooth">
+                <h3 class="text-xl font-bold text-profit mb-3">📊 Daily Signals</h3>
+                <p class="text-gray-300">XAUUSD, EURUSD & Deriv Synthetic Indices</p>
+                <p class="font-bold mt-3">₦4,800 / $3 daily</p>
+            </div>
+            <div class="bg-card/80 p-7 rounded-xl card-smooth">
+                <h3 class="text-xl font-bold text-profit mb-3">📚 Strategy E-Book</h3>
+                <p class="text-gray-300">Full FVG Guide + Bot Settings & Templates</p>
+                <p class="font-bold mt-3">₦12,000 / $8 One-Time</p>
+            </div>
+            <div class="bg-card/80 p-7 rounded-xl card-smooth">
+                <h3 class="text-xl font-bold text-profit mb-3">🚀 Prop Firm Coaching</h3>
+                <p class="text-gray-300">Pass FundedNext & FTMO Fast & Safe</p>
+                <p class="font-bold mt-3">₦23,500 / $15</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAYMENT & TELEGRAM BOT -->
+    <section class="max-w-lg mx-auto bg-card/80 p-8 rounded-xl text-center shadow-lg">
+        <h2 class="text-2xl font-bold mb-6">💳 VIP Payment</h2>
+        <p class="mb-2"><b>Moniepoint:</b> 7060516659</p>
+        <p class="mb-5"><b>TRON USDT:</b> TGbw5jPLM8Dn1ipJiNMbAJCeW6JmLyUsq7</p>
+
+        <!-- TELEGRAM BOT LINK -->
+        <div class="bot-card p-5 rounded-lg mb-5 text-left">
+            <p class="text-lg font-bold text-tg mb-2">🚀 Zandasx Trades — Your 24/7 Assistant</p>
+            <p class="text-gray-300 text-sm mb-3">
+                💳 /pay • 📸 /proof • 📋 /status<br>
+                Submit payments, send proofs, check orders ✅
+            </p>
+            <a id="tg-bot-link" href="https://t.me/Zxtrades_bot" target="_blank" class="bg-tg/90 hover:bg-tg px-5 py-2 rounded-lg inline-block w-full smooth text-center">
+                <i class="fa fa-telegram"></i> Open Telegram Bot
+            </a>
+        </div>
+
+        <a href="https://wa.me/2347060516659" target="_blank" class="bg-green-600/90 hover:bg-green-600 px-6 py-2 rounded-lg smooth">
+            <i class="fa fa-whatsapp"></i> Chat On WhatsApp
+        </a>
+    </section>
+</div>
+
+
+<!-- ============== FULL SCREEN CHART PAGE ============== -->
+<div id="page-chart" class="page w-full h-screen p-2 fade-in">
+    <h2 class="text-center text-2xl font-bold mb-2">📊 Professional Full-Screen Chart</h2>
+    <div class="w-full h-[calc(100vh-80px)] rounded-xl overflow-hidden border-2 border-accent/40">
+        <div class="tradingview-widget-container w-full h-full">
+            <div id="tv_chart" class="w-full h-full"></div>
+            <script src="https://s3.tradingview.com/tv.js"></script>
+            <script>
+            new TradingView.widget({
+              "width": "100%",
+              "height": "100%",
+              "symbol": "FX:XAUUSD",
+              "interval": "15",
+              "timezone": "Africa/Lagos",
+              "theme": "dark",
+              "style": "1",
+              "locale": "en",
+              "toolbar_bg": "#1E293B",
+              "enable_publishing": false,
+              "allow_symbol_change": true,
+              "details": true,
+              "studies": ["MASimple@tv-basicstudies", "RSI@tv-basicstudies"],
+              "container_id": "tv_chart"
+            });
+            </script>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============== OWNER LOGIN PANEL ============== -->
+<div id="loginPanel" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900/96 p-8 rounded-xl shadow-2xl border-2 border-red-500 z-50 hidden w-80">
+    <h3 class="text-xl font-bold text-center text-red-400 mb-4">🔐 Owner Login</h3>
+    <input type="text" id="user" placeholder="Username" class="w-full p-2 mb-3 rounded bg-card border border-gray-600 text-white">
+    <input type="password" id="pass" placeholder="Password" class="w-full p-2 mb-4 rounded bg-card border border-gray-600 text-white">
+    <button onclick="loginOwner()" class="w-full bg-profit py-2 rounded mb-2 smooth hover:bg-profit/80">Login & Edit Site</button>
+    <button onclick="closeLogin()" class="w-full bg-red-600/80 py-2 rounded smooth hover:bg-red-600">Close</button>
+</div>
+
+<!-- OWNER EDIT BAR -->
+<div id="editBar" class="fixed bottom-0 left-0 right-0 bg-red-600/90 p-3 text-center z-40 hidden">
+    <span class="font-bold">✅ OWNER MODE: Click text/links to edit!</span>
+    <button onclick="lockEdit()" class="ml-4 bg-black/50 px-3 py-1 rounded hover:bg-black/80">🔒 Lock & Save</button>
+</div>
+
+
+<script>
+// --- PAGE NAVIGATION ---
+function showPage(name){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-'+name).classList.add('active');
+    window.scrollTo(0,0);
+}
+
+// --- OWNER LOGIN ---
+const OWNER_USER = "admin";
+const OWNER_PASS = "Zandasx123";
+
+function showLogin(){ document.getElementById('loginPanel').classList.remove('hidden'); }
+function closeLogin(){ document.getElementById('loginPanel').classList.add('hidden'); }
+
+function loginOwner(){
+    let u = document.getElementById('user').value.trim();
+    let p = document.getElementById('pass').value.trim();
+    if(u === OWNER_USER && p === OWNER_PASS){
+        closeLogin();
+        document.body.contentEditable = 'true';
+        document.getElementById('editBar').classList.remove('hidden');
+        alert("✅ Welcome! You can edit the bot link and all text!");
+    }else alert("❌ Wrong Login!");
+}
+
+function lockEdit(){
+    document.body.contentEditable = 'false';
+    document.getElementById('editBar').classList.add('hidden');
+    alert("🔒 Locked! Visitors see clean site!");
+}
+</script>
+
+</body>
+</html>
